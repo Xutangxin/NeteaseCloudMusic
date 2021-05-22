@@ -1,5 +1,5 @@
 # NeteaseCloudMusic
-## a NeteaseCloudMusic like project, based on Vue.js 使用Vue开发的音乐播放器
+### a NeteaseCloudMusic like project, based on Vue.js 使用Vue开发的音乐播放器
 
 功能：
 * 最新音乐推荐及播放
