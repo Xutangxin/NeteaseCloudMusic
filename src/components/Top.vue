@@ -42,14 +42,15 @@ export default {
   top: 0;
   width: 100%;
   height: 40px;
-  background-image: linear-gradient(to right, white, #ededed);
+  background-color: #ededed;
+  opacity: 0.6;
 }
 
 input {
   width: 154px;
   height: 30px;
   margin: 5px 0 0 80%;
-  padding: 0 5px 0 5px;
+  padding: 0 5px 0 10px;
   border-radius: 15px;
   outline: none;
   border: none;

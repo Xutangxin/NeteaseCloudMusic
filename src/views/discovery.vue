@@ -2,36 +2,46 @@
   <!-- 推荐歌单 -->
   <div class="recommend">
     <h4>推荐歌单</h4>
-    <div class="reco" v-for="(item, index) in list" :key="index">
-      <img :src="item.picUrl" alt />
-      <span>{{ item.name }}</span>
+    <div class="list">
+      <div class="reco" v-for="(item, index) in list" :key="index">
+        <img :src="item.picUrl" alt />
+        <span>{{ item.name }}</span>
+      </div>
     </div>
 
     <!-- 最新音乐 -->
-    <h4 id="title">最新音乐</h4>
-    <div class="latest" v-for="(item, index) in songs" :key="'latest-' + index">
-      <div class="img">
-        <!-- 封面 -->
-        <img :src="item.picUrl" alt />
-      </div>
-      <div class="info">
-        <!-- 歌名和歌手名 -->
-        <div>{{ item.name }}</div>
-        <div id="singername">{{ item.song.artists[0].name }}</div>
-        <!-- 点击调用playMusic播放 -->
-        <div id="play" @click="playMusic(item.id)" title="点击播放">▶</div>
+    <h4 class="title">最新音乐</h4>
+    <div class="songs">
+      <div
+        class="latest"
+        v-for="(item, index) in songs"
+        :key="'latest-' + index"
+      >
+        <div class="img">
+          <!-- 封面 -->
+          <img :src="item.picUrl" alt />
+        </div>
+        <div class="info">
+          <!-- 歌名和歌手名 -->
+          <div>{{ item.name }}</div>
+          <div id="singername">{{ item.song.artists[0].name }}</div>
+          <!-- 点击调用playMusic播放 -->
+          <i class="el-icon-caret-right" @click="playMusic(item.id)"></i>
+        </div>
       </div>
     </div>
 
     <!-- 推荐MV -->
-    <h4 id="mvs">推荐MV</h4>
-    <div class="mv" v-for="(item, index) in mvs" :key="'mv' + index">
-      <a href="javascript:;">
-        <span id="playmv">▶</span>
-        <img :src="item.picUrl" alt />
-      </a>
-      <p id="mvname">{{ item.name }}</p>
-      <p id="artistname">{{ item.artistName }}</p>
+    <h4>推荐MV</h4>
+    <div class="mvs">
+      <div class="mv" v-for="(item, index) in mvs" :key="'mv' + index">
+        <a href="javascript:;">
+          <span id="playmv">▶</span>
+          <img :src="item.picUrl" alt />
+        </a>
+        <p id="mvname">{{ item.name }}</p>
+        <p id="artistname">{{ item.artistName }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -102,7 +112,6 @@ export default {
   height: calc(100vh - 90px);
   padding: 10px 40px 0 40px;
   overflow: scroll;
-  /* border: 1px solid gray; */
 }
 .recommend::-webkit-scrollbar {
   display: none;
@@ -110,12 +119,17 @@ export default {
 .recommend h4 {
   margin: 8px 0 5px 7px;
 }
-.recommend .reco {
-  float: left;
-  width: 150px;
+.recommend .list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+}
+.list .reco {
+  width: 13%;
   height: 165px;
   margin: 5px 0 8px 8px;
   text-align: center;
+  border-radius: 10px;
   overflow: hidden;
 }
 .recommend .reco img {
@@ -126,11 +140,21 @@ export default {
   font-size: 12px;
   text-align: left;
 }
+.recommend .title {
+  margin-top: 30px;
+}
+.songs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 .latest {
-  float: left;
-  width: 500px;
+  width: 42%;
   height: 130px;
   margin: 5px 50px 5px 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .latest:hover {
   background-color: #f5f4f6;
@@ -155,7 +179,7 @@ export default {
   margin-top: 20px;
   color: gray;
 }
-.latest .info #play {
+.latest .info .el-icon-caret-right {
   width: 40px;
   height: 30px;
   margin-top: 10px;
@@ -163,17 +187,17 @@ export default {
   text-align: left;
   line-height: 30px;
 }
-.latest .info #play:hover {
+.latest .info .el-icon-caret-right:hover {
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
 }
-#title {
-  margin-top: 190px;
+.recommend .mvs {
+  display: flex;
+  justify-content: space-between;
 }
 .recommend .mv {
-  float: left;
-  width: 250px;
+  width: 27%;
   height: 200px;
   margin-right: 20px;
   border-radius: 5px;
@@ -181,6 +205,7 @@ export default {
 .mv img {
   width: 100%;
   height: 140px;
+  border-radius: 5px;
 }
 .mv a {
   position: relative;
@@ -189,9 +214,6 @@ export default {
 }
 .recommend .mv:last-child {
   margin-right: 0;
-}
-#mvs {
-  margin: 575px 0 12px 0;
 }
 #playmv {
   position: absolute;

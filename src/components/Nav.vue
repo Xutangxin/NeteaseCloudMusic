@@ -43,7 +43,7 @@ export default {};
 .nav {
   position: fixed;
   top: 40px;
-  width: 150px;
+  width: 130px;
   height: calc(100vh - 90px);
   background-image: linear-gradient(to top, #ededed, white);
   background-color: #ededed;

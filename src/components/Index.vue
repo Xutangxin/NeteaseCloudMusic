@@ -20,10 +20,9 @@ export default {};
 .index .main {
   position: fixed;
   top: 40px;
-  left: 150px;
-  width: calc(100vw - 150px);
+  left: 130px;
+  width: calc(100vw - 130px);
   height: calc(100vh - 90px);
   padding: 0;
-  /* margin-left: 2px; */
 }
 </style>

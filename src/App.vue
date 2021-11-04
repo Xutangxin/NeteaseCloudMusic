@@ -2,7 +2,7 @@
   <div>
     <Top></Top>
     <Nav></Nav>
-    <index></index>
+    <Index></Index>
     <PlayBar></PlayBar>
   </div>
 </template>
@@ -11,12 +11,11 @@
 import Top from "@/components/Top";
 import PlayBar from "@/components/PlayBar";
 import Nav from "@/components/Nav";
-
-import index from "@/views/index";
+import Index from "@/components/Index";
 
 export default {
   components: {
-    index,
+    Index,
     Top,
     PlayBar,
     Nav,
