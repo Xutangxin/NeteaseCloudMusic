@@ -16,13 +16,13 @@ Vue.use(VueRouter)
 Vue.use(ElementUI);
 
 // 导入需要路由管理的组件
-import discovery from './components/discovery.vue'
-import playlists from './components/playlists.vue'
-import songs from './components/songs.vue'
-import mvs from './components/mvs.vue'
-import result from './components/result.vue'
-import playlist from './components/playlist.vue'
-import mv from './components/mv.vue'
+import discovery from '@/views/discovery.vue'
+import playlists from '@/views/playlists.vue'
+import songs from '@/views/songs.vue'
+import mvs from '@/views/mvs.vue'
+import result from '@/views/result.vue'
+import playlist from '@/views/playlist.vue'
+import mv from '@/views/mv.vue'
 
 // 创建路由
 let router = new VueRouter({

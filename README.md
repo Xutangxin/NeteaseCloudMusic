@@ -1,11 +1,24 @@
-# NeteaseCloudMusic
-### a NeteaseCloudMusic like project, based on Vue.js 使用Vue开发的音乐播放器
+# neteasecloudmusic
 
-功能：
-* 最新音乐推荐及播放
-* 歌曲关键词搜索及结果展示（歌曲+歌单+mv）
-* mv播放
+## Project setup
+```
+npm install
+```
 
-缺点：
-* 本人在开发该项目时并不了解流式布局和flex布局，没有适配布局的意识，所以页面布局大小指定的是绝对大小（px），导致页面只有在特定大小的屏幕上才会完全铺满（开发时页面大小是以我个人电脑屏幕大小为准），
-在其余尺寸的屏幕上会有奇怪的表现。。。在以后的开发中会注意页面的适配( ╯□╰ )
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
