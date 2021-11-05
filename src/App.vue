@@ -3,7 +3,7 @@
     <Top></Top>
     <Nav></Nav>
     <Index></Index>
-    <PlayBar></PlayBar>
+    <PlayBar :musicUrl="musicUrl"></PlayBar>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
     Top,
     PlayBar,
     Nav,
+  },
+  data() {
+    return {
+      musicUrl: "",
+    };
   },
 };
 </script>

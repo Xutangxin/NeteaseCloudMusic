@@ -2,13 +2,25 @@
   <div class="index">
     <div class="main">
       <!-- 使用路由来实现页面切换，不同的路由匹配不同的页面 -->
-      <router-view></router-view>
+      <router-view @handleMusicUrl="handleMusicUrl"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      musicUrl: "",
+    };
+  },
+  methods: {
+    handleMusicUrl(val) {
+      this.musicUrl = val;
+      console.log(val);
+    },
+  },
+};
 </script>
 
 <style scoped>

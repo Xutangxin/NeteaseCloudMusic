@@ -124,7 +124,7 @@ export default {
   created() {
     this.getMvUrl();
     this.getRelatedMv();
-    this.getMvandSingerInfo();
+    this.getMvAndSingerInfo();
     this.getComments();
   },
   methods: {
@@ -144,25 +144,17 @@ export default {
         this.simiMVs = res.data.mvs;
       });
     },
-    // 获取mv信息
-    getMvInfo() {
-      getMvInfo({
+    //获取mv和歌手信息
+    async getMvAndSingerInfo() {
+      let mvData = await getMvInfo({
         mvid: this.$route.query.q,
-      }).then((res) => {
-        this.mvInfo = res.data.data;
       });
-    },
-    // 获取歌手信息
-    getSingerInfo() {
-      getSingerInfo({
+      this.mvInfo = mvData.data.data;
+      let singerData = await getSingerInfo({
         id: this.mvInfo.artists[0].id,
-      }).then((res) => {
-        this.icon = res.data.artist.picUrl;
       });
-    },
-    async getMvandSingerInfo() {
-      await this.getMvInfo();
-      this.getSingerInfo();
+      console.log(singerData);
+      this.icon = singerData.data.artist.picUrl;
     },
     // 获取评论数据
     getComments() {
@@ -175,12 +167,10 @@ export default {
         this.total = res.data.total;
       });
     },
-
     handleCurrentChange(val) {
       this.page = val;
       this.getComments();
     },
-
     timestampToTime(timestamp) {
       let date = new Date(timestamp);
       let Y = date.getFullYear() + "-";
@@ -251,11 +241,12 @@ export default {
 .avatar-wrap img {
   width: 30px;
   height: 30px;
-  border-radius: 15px;
+  border-radius: 50%;
+  background-size: cover;
   vertical-align: middle;
 }
 .singer-info .name {
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 14px;
 }
 .singer-info .avatar-wrap {

@@ -94,7 +94,7 @@ export default {
       getMusicUrl(id).then((res) => {
         let url = res.data.data.url;
         // 把播放地址传给父组件
-        this.$parent.musicUrl = url;
+        this.$parent.$parent.musicUrl = url;
       });
     },
   },

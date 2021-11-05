@@ -246,9 +246,9 @@ export default {
 }
 .songlists {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
   height: 440px;
   margin: 0 auto;
   padding: 20px;

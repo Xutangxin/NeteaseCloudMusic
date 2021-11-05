@@ -161,7 +161,7 @@ export default {
   justify-content: center;
   width: 90%;
   height: 70px;
-  margin: 0 auto;
+  margin: 3px auto;
   line-height: 80px;
   border-radius: 10px;
 }
