@@ -5,7 +5,7 @@
     <div class="list">
       <div class="reco" v-for="(item, index) in list" :key="index">
         <img :src="item.picUrl" alt />
-        <span>{{ item.name }}</span>
+        <div class="des">{{ item.name }}</div>
       </div>
     </div>
 
@@ -127,7 +127,7 @@ export default {
 .list .reco {
   width: 13%;
   height: 165px;
-  margin: 5px 0 8px 8px;
+  /* margin: 5px 0 8px 8px; */
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
@@ -136,9 +136,11 @@ export default {
   width: 140px;
   height: 140px;
 }
-.recommend .reco span {
-  font-size: 12px;
-  text-align: left;
+.recommend .reco .des {
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .recommend .title {
   margin-top: 30px;

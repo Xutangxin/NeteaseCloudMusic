@@ -1,7 +1,6 @@
 <template>
   <div class="top">
     <input
-      type="search"
       v-model="inputValue"
       @keydown.enter="toSearch"
       placeholder="按下回车搜索"

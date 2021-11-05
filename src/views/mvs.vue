@@ -233,7 +233,10 @@ export default {
   /* border: 1px solid gray; */
 }
 .mvs-container .page {
-  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 5px;
 }
 .tabs-wrap .tab {
   display: inline-block;
@@ -267,12 +270,13 @@ export default {
   margin-top: 20px;
 }
 .mvs .items {
+  display: flex;
+  flex-wrap: wrap;
   height: 390px;
   padding: 0 0 0 120px;
   margin: 10px 0 auto;
 }
 .mvs .items .item {
-  float: left;
   width: 190px;
   height: 160px;
   margin-right: 15px;

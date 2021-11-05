@@ -102,14 +102,16 @@
       page-size 每页多少条数据
       current-change 页码改变事件
     -->
-    <el-pagination
-      @current-change="handleCurrentChange"
-      background
-      layout="prev, pager, next"
-      :total="total"
-      :current-page="page"
-      :page-size="10"
-    ></el-pagination>
+    <div class="page">
+      <el-pagination
+        @current-change="handleCurrentChange"
+        background
+        layout="prev, pager, next"
+        :total="total"
+        :current-page="page"
+        :page-size="10"
+      ></el-pagination>
+    </div>
   </div>
 </template>
 
@@ -183,7 +185,6 @@ export default {
 .playlists {
   width: 100%;
   height: calc(100vh - 90px);
-  /* border: 1px solid gray; */
 }
 .playlists,
 .songlists {
@@ -195,15 +196,18 @@ export default {
 }
 
 .playlists .toplist {
-  width: 960px;
+  display: flex;
+  /* width: 70%; */
+  /* min-width: 960px; */
+  width: fit-content;
   height: 150px;
   margin: 5px auto;
   padding: 5px;
-  background-image: linear-gradient(to right, #5e524d, rgb(211, 203, 203));
-  border-radius: 5px;
+  background-image: linear-gradient(to right, #5e524d, rgb(185, 179, 179));
+  border-radius: 10px;
+  overflow: hidden;
 }
 .toplist .cover {
-  float: left;
   width: 140px;
   height: 100%;
 }
@@ -213,7 +217,6 @@ export default {
   border-radius: 5px;
 }
 .toplist .info {
-  float: left;
   width: 780px;
   height: 100%;
   margin-left: 30px;
@@ -221,6 +224,7 @@ export default {
 #logo {
   width: 80px;
   height: 22px;
+  line-height: 22px;
   border-radius: 5px;
   margin-top: 5px;
   border: 1px solid #d8a15a;
@@ -241,13 +245,17 @@ export default {
   overflow: hidden;
 }
 .songlists {
-  height: 450px;
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  width: 100%;
+  height: 440px;
+  margin: 0 auto;
   padding: 20px;
-  padding-left: 120px;
 }
 .songlists div {
-  float: left;
   width: 160px;
+  /* width: calc(25% - 30px); */
   height: 185px;
   margin: 15px;
   border-radius: 7px;
@@ -267,11 +275,12 @@ export default {
 }
 .tabbar {
   height: 30px;
-  padding-left: 543px;
   line-height: 30px;
+  text-align: right;
+  padding-right: 200px;
 }
 .tabbaritem {
-  margin: 0 7px 0 0;
+  margin: 0 10px 0 0;
 }
 .tabbaritem:hover {
   cursor: pointer;
@@ -279,7 +288,10 @@ export default {
 .active {
   color: red;
 }
-.el-pagination {
-  text-align: center;
+.page {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 5px;
 }
 </style>
